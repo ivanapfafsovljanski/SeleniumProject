@@ -58,11 +58,5 @@ public class LogInTest extends TestsBase{
 		Assert.assertEquals(allPages.worningMsg(), allPages.stringFromExcell("Login", 53, 5));
 	}
 	
-	
-//@AfterMethod
-	public void afterMethod() {
-		
-		
-	}
 }
 

@@ -40,16 +40,4 @@ public int numericValue(String sheetName, int rowNum, int cellNum) {
 	return (int) cell.getNumericCellValue();
 }	
 
-/*public String getData(String sheetName, int columnNumber, int rowNumber) {
-	sheet = wb.getSheet(sheetName);
-	row = sheet.getRow(rowNumber - 1);
-	cell = row.getCell(columnNumber - 1);
-	if (cell.getCellType() == CellType.NUMERIC) { 
-		value = String.valueOf((int) cell.getNumericCellValue());
-	} else {
-		value = cell.getStringCellValue();
-	}
-	return value;
-}*/
-
 }

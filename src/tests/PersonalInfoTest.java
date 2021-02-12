@@ -26,7 +26,6 @@ public class PersonalInfoTest extends TestsBase{
 		pagePersonalInfo.passwordConformation();
 		pagePersonalInfo.saveBtnClick();
 		Assert.assertEquals(pagePersonalInfo.assertSuccessMesage(), readFromExcell.textualValue("PersonalInfo", 8, 4));
-		//changing to old values
 		
 	}
 	@AfterMethod

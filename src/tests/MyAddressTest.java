@@ -29,6 +29,7 @@ public class MyAddressTest extends TestsBase{
 		
 		for (int i = 0; i < pageMyAddress.changedAddressValueAssert().size(); i++) {	
 			if (i == 3) {
+				//comma must be added, in browser i added and with gettext() name and comma are picked 
 				Assert.assertEquals(pageMyAddress.changedAddressValueAssert().get(i), readFromExcell.textualValue("MyAddress", (5+i), 4) + ",");
 			}
 			else

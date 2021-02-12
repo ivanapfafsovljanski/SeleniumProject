@@ -36,7 +36,7 @@ public List<WebElement> wishlistList() {
 	listOfWishlistNames = driver.findElements(By.tagName("tr"));
 	return listOfWishlistNames;
 }
-//probati kroz petlju ovo proterati za više wishlisti
+
 public boolean assertWishLictCreated() {
 	wishlistList();
 	String name;
@@ -60,19 +60,5 @@ public void clickOnDeleteBtns() throws InterruptedException {
 		Thread.sleep(3000);
 	}
 }
-/*public boolean assertMultipleWishLictsCreated() {
-	wishlistList();
-	boolean namePresent = true;
-	for (int i = 1; i < listOfWishlistNames.size(); i++) {		
-		String name;
-		name = listOfWishlistNames.get(1).getText();
-		if (name.contains(readFromExcell.textualValue("WishList", (23+i), 4))) {
-			namePresent = true;
-		}
-		else
-			namePresent = false;
-	}
-	return namePresent;
-	}*/
 
 }

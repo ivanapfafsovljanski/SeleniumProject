@@ -40,7 +40,7 @@ public class PersonalInfoPage {
 	public void clickOnBackToYourAccountBtn() {
 		driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[1]/a")).click();
 	}
-	//videti sa if da se proveri koje je prezime pa da se uèitava ista metoda sa razlièitim vrednostima
+	
 	public void returningOldlastName() {
 		lastNameFieldChanging = driver.findElement(By.id("lastname"));
 		lastNameFieldChanging.clear();

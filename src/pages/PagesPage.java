@@ -45,19 +45,4 @@ public void clickOnMyAccountBtn() {
 	driver.findElement(By.className("header_user_info")).click();
 }
 
-
-//finding if SignOut button is displayed
-/*public boolean signInOutBtnText() {
-	boolean isTrue;
-	String neki = driver.findElement(By.className("header_user_info")).getText().trim();
-	if (driver.findElement(By.className("header_user_info")).getText().trim().equalsIgnoreCase("Sign out")){
-		isTrue = true;
-	}
-	else {
-		isTrue = false;
-	}
-	
-	return isTrue;
-}*/
-
 }

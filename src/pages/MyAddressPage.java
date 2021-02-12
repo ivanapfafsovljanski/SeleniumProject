@@ -104,7 +104,7 @@ public class MyAddressPage {
 	public void saveChangesInForm() {
 		driver.findElement(By.id("submitAddress")).click();;
 	}
-	//za asertovanje
+	
 	public List<String> changedAddressValueAssert() {
 		listOfNewAddressValues = new ArrayList<String>();
 		

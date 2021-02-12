@@ -49,7 +49,7 @@ public void beforeClass() throws IOException {
 
 @AfterClass
 public void afterClass() throws IOException {
-	//driver.close();
+	driver.close();
 	
 }
 }

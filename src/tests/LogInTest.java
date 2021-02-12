@@ -26,31 +26,31 @@ public class LogInTest extends TestsBase{
 		Assert.assertTrue(allPages.signOutBtnDisplayed());
 		pageMyAccount.clickOnSignOutBtn();
 	}
-	//@Test(priority = 2)
+	@Test(priority = 2)
 	public void LogOuValid() throws InterruptedException {
 		LoginValid();
 		Assert.assertEquals(allPages.authenticationNavPgDisplayed(), allPages.stringFromExcell("Login", 40, 5));
 	}
-	//@Test(priority = 5)
+	@Test(priority = 5)
 	public void LoginEmpty() {
 		pageAuthorication.ClickloginBtn();
 		Assert.assertEquals(allPages.worningMsg(), allPages.stringFromExcell("Login", 16, 5));
 	}
-	//@Test(priority = 10)
+	@Test(priority = 10)
 	public void LoginWrongEmail() {
 		pageAuthorication.getemailField().sendKeys(allPages.stringFromExcell("Login", 22, 4));
 		pageAuthorication.getpasswordField().sendKeys(allPages.stringFromExcell("Login", 24, 4));
 		pageAuthorication.ClickloginBtn();
 		Assert.assertEquals(allPages.worningMsg(), allPages.stringFromExcell("Login", 25, 5));
 	}
-	//@Test(priority = 15)
+	@Test(priority = 15)
 	public void LoginWrongPsw() {
 		pageAuthorication.getemailField().sendKeys(allPages.stringFromExcell("Login", 31, 4));
 		pageAuthorication.getpasswordField().sendKeys(allPages.stringFromExcell("Login", 33, 4));
 		pageAuthorication.ClickloginBtn();
 		Assert.assertEquals(allPages.worningMsg(), allPages.stringFromExcell("Login", 34, 5));
 	}
-	//@Test(priority = 20)
+	@Test(priority = 20)
 	public void LoginWrongCredentials() throws InterruptedException{
 		pageAuthorication.getemailField().sendKeys(allPages.stringFromExcell("Login", 49, 4));
 		pageAuthorication.getpasswordField().sendKeys(allPages.stringFromExcell("Login", 51, 4));
@@ -59,7 +59,7 @@ public class LogInTest extends TestsBase{
 	}
 	
 	
-	//@AfterMethod
+//@AfterMethod
 	public void afterMethod() {
 		
 		

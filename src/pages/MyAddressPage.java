@@ -45,17 +45,7 @@ public class MyAddressPage {
 		this.readFromExcell = readFromExcell;
 	}
 	
-	//excell reader - da li je ovo duplo?!?
-/*	public String stringFromExcell(String sheetName, int rowNo, int cellNo) {
-		String textField = readFromExcell.textualValue(sheetName, rowNo, cellNo);
-		return textField;
-	}
-	public int numbersFromExcell(String sheetName, int rowNo, int cellNo) {
-		int numericField = readFromExcell.numericValue(sheetName, rowNo, cellNo);
-		return numericField;
-	}*/
 	public void clickOnUpdateBtn() throws InterruptedException {
-		//updateBtn = driver.findElement(By.cssSelector(".btn.btn-default.button.button-small"));
 		updateBtn = driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div/div[1]/div/div/ul/li[9]/a[1]"));
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].click();", updateBtn);
@@ -115,12 +105,14 @@ public class MyAddressPage {
 		driver.findElement(By.id("submitAddress")).click();;
 	}
 	//za asertovanje
-	public void changedAddressValueAssert() {
+	public List<String> changedAddressValueAssert() {
 		listOfNewAddressValues = new ArrayList<String>();
+		
 		listOfNewAddressValues.add(driver.findElement(By.className("address_name")).getText());
-		listOfNewAddressValues.add(driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[2]")).getText());
+		listOfNewAddressValues.add(driver.findElement(By.xpath("(//li//span[@class=\"address_name\"])[2]")).getText());
 		listOfNewAddressValues.add(driver.findElement(By.className("address_address1")).getText());
-		listOfNewAddressValues.add(driver.findElement(By.className("address_address2")).getText());
+		listOfNewAddressValues.add(driver.findElement(By.xpath("(//li//span)[6]")).getText());
+		return listOfNewAddressValues;
 	}
 
 	public void clickOnAddNewAddressBtn() {

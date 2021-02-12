@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class PersonalInfoTest extends TestsBase{
-	//@BeforeMethod
+	@BeforeMethod
 	public void beforeMethod() throws InterruptedException {
 		driver.navigate().to("http://automationpractice.com/index.php");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -20,20 +20,16 @@ public class PersonalInfoTest extends TestsBase{
 		Thread.sleep(1000);
 		pageMyAccount.clickOnProfileInfoBtn();
 	}
-	//@Test (priority = 40)
+	@Test (priority = 40)
 	public void changigPersonalInfo() {
 		pagePersonalInfo.changeingLastName();
 		pagePersonalInfo.passwordConformation();
 		pagePersonalInfo.saveBtnClick();
 		Assert.assertEquals(pagePersonalInfo.assertSuccessMesage(), readFromExcell.textualValue("PersonalInfo", 8, 4));
 		//changing to old values
-		pagePersonalInfo.clickOnBackToYourAccountBtn();
-		pageMyAccount.clickOnProfileInfoBtn();
-		pagePersonalInfo.returningOldlastName();
-		pagePersonalInfo.passwordConformation();
-		pagePersonalInfo.saveBtnClick();
+		
 	}
-	//@AfterMethod
+	@AfterMethod
 	public void afterMethod() {
 		//changing to old values
 		pagePersonalInfo.clickOnBackToYourAccountBtn();
